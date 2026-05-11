@@ -367,6 +367,11 @@ def main():
         "labeled_data.csv"
     )
 
+    manual_review_file = os.path.join(
+    output_dir,
+    "manual_review_needed.csv"
+    )
+
     # ---------------------------------------------
     # CHECK INPUT FILE
     if not os.path.exists(input_file):
@@ -457,6 +462,15 @@ def main():
         encoding="utf-8-sig"
     )
 
+    manual_review_df = df[
+    df["Final_Label"] == "[MANUAL_REVIEW_REQUIRED]"
+    ]
+
+    manual_review_df.to_csv(
+    manual_review_file,
+    index=False,
+    encoding="utf-8-sig"
+    )
     # ---------------------------------------------
     # SUMMARY
     manual_review_count = (
