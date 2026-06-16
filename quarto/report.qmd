@@ -9,6 +9,8 @@ format:
   html:
     toc: true
     theme: cosmo
+    code-fold: true
+    code-summary: "Code anzeigen"
 execute:
   echo: true
   warning: false
@@ -74,7 +76,17 @@ Projekt_GenderData/
 
 │   ├── raw/
 
+│   │   └── lgbtq_series_wiki_table.csv
+
 │   └── processed/
+
+│       ├── labeled_data.csv
+
+│       ├── manual_review_needed.csv
+
+│       ├── manual_review_completed.csv
+
+│       └── final_labeled_data.csv
 
 │
 
@@ -82,11 +94,31 @@ Projekt_GenderData/
 
 │   ├── data_extraction.py
 
+│   ├── data_enrichment.py
+
 │   ├── data_enrichment_plus.py
 
 │   ├── merge_final_data.py
 
-│   └── visualize_labels.py
+│   ├── visualize_labels.py
+
+│   ├── advanced_visualizations.py
+
+│   └── viz_wordcloud_labels.py
+
+│
+
+├── visualizations/
+
+│   ├── treemap_identity_distribution.png
+
+│   ├── stacked_bar_identity_over_time.png
+
+│   ├── line_chart_identity_development.png
+
+│   ├── wordcloud_labels_clean.png
+
+│   └── sankey_year_to_identity.html
 
 │
 
@@ -192,7 +224,7 @@ The dataset used for the final analysis was:
 
 ```text
 final_labeled_data.csv
-````
+```
 
 ```{python}
 import pandas as pd
@@ -206,6 +238,7 @@ df = pd.read_csv(
 
 df.head()
 ```
+
 
 # Dataset Overview
 
@@ -234,7 +267,7 @@ print("Rows:", len(df))
 print("Columns:", len(df.columns))
 
 df.columns
-````
+```
 
 # Distribution of LGBTQ+ Identities
 
@@ -349,7 +382,6 @@ For example, descriptions such as:
 
 ```text
 "X and Y are in a relationship."
-# Reproducibility
 ```
 
 # Conclusion
@@ -397,4 +429,3 @@ Overall, the project demonstrates how computational approaches can be applied to
 
 - Python Software Foundation. *Python Programming Language.*  
   https://www.python.org/
-
