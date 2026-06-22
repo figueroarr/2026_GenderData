@@ -1,0 +1,392 @@
+/*-- scss:defaults --*/
+$body-bg: #f8f9fa;
+$body-color: #000000;
+
+/*-- scss:rules --*/
+
+// 1. GLOBAL BACKGROUND & TEXT (Erzwingt den hellen Magazin-Hintergrund)
+body, 
+html,
+.quarto-container, 
+#quarto-content, 
+main, 
+.page-columns,
+#quarto-margin-sidebar,
+.sidebar {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+}
+
+// =========================================================================
+// TITLE BLOCK (Helvetica Neue Black / Ultra Bold Look)
+// =========================================================================
+.title {
+  font-family: "Helvetica Neue", Helvetica, "Arial Black", sans-serif !important;
+  font-weight: 900 !important; 
+  text-transform: uppercase !important;
+  font-size: 3.5rem !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.03em !important; 
+  color: #ffffff !important;
+  background-color: #D65f93 !important; 
+  padding: 20px !important;
+  border: 4px solid #000000 !important;
+  box-shadow: 8px 8px 0px #000000 !important;
+  margin-bottom: 2rem !important;
+}
+
+// =========================================================================
+// AUTHORS & SUBTITLE BLOCK (Helvetica Neue Bold / Medium)
+// =========================================================================
+.quarto-title-meta {
+  display: block !important;
+  background-color: #ffffff !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  padding: 20px !important;
+  margin-top: 3rem !important;
+  margin-bottom: 4rem !important;
+  max-width: fit-content; 
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 700 !important; 
+  text-transform: uppercase !important;
+
+  .quarto-title-meta-heading {
+    display: none !important; 
+  }
+  
+  .quarto-title-meta-contents {
+    font-size: 1.1rem !important;
+    color: #000000 !important;
+    letter-spacing: -0.01em;
+    
+    p {
+      display: inline !important;
+      margin: 0 !important;
+    }
+    
+    p:not(:last-child)::after {
+      content: " • "; 
+      color: #D65f93; 
+      padding: 0 10px;
+    }
+  }
+}
+
+// =========================================================================
+// DOCUMENT HEADINGS (H1, H2, H3)
+// =========================================================================
+h1, h2, h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color: #000000 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em !important;
+}
+
+h1 {
+  font-weight: 900 !important;
+  font-size: 2.2rem !important;
+  border-bottom: 3px solid #000000 !important;
+  padding-bottom: 8px !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+h2 {
+  font-weight: 800 !important;
+  font-size: 1.6rem !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.2rem !important;
+}
+
+h3 {
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+
+// 6. MAIN TEXT
+p {
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  color: #1a202c !important; // Sattes, gut lesbares Dunkelgrau
+}
+
+// 1. ZITATE / CALLOUT BOXEN (Für wichtige Thesen oder Zitate)
+blockquote, .callout {
+  background-color: #ffffff !important;
+  border: 4px solid #000000 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  padding: 1.5rem !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+// 2. DATENTABELLEN (Harter Magazin-Look statt Standard-Web)
+table, .table {
+  border-collapse: collapse !important;
+  border: 4px solid #000000 !important;
+  background-color: #ffffff !important;
+  
+  thead {
+    background-color: #D65f93 !important; // Pinker Tabellenkopf
+    color: #ffffff !important;
+    border-bottom: 4px solid #000000 !important;
+    th {
+      font-weight: 900 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+    }
+  }
+  
+  tbody tr {
+    border-bottom: 2px solid #000000 !important;
+    td {
+      color: #000000 !important;
+      font-weight: 500 !important;
+    }
+  }
+}
+
+// 3. CODE-BLÖCKE (Falls du Code im Report anzeigst)
+div.sourceCode, pre {
+  border: 3px solid #000000 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  background-color: #ffffff !important;
+}
+
+// 4. TEXT-MARKIERUNGEN / HIGHLIGHTS
+mark, .highlight {
+  background-color: #D65f93 !important;
+  color: #ffffff !important;
+  padding: 0 4px !important;
+  font-weight: 700 !important;
+}
+
+// =========================================================================
+// BRUTALIST TOC - FULL REPLACEMENT (ALIGNED LINE & ULTRA STABLE SHADOWS)
+// =========================================================================
+
+// Reset default Quarto wrappers Safely
+#quarto-margin-sidebar,
+.quarto-margin-sidebar,
+.sidebar,
+#TOC nav {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+// 1. THE MAIN CONTAINER: Lowered to align with the pink main title block
+#quarto-margin-sidebar {
+  position: sticky !important;
+  top: 75px !important; 
+  width: 290px !important;       
+  padding: 0 0 20px 0 !important; 
+}
+
+// 2. THE ACTUAL TOC WRAPPER: Aligns the vertical line exactly with the header
+#TOC {
+  border-left: 3px solid #000000 !important; 
+  padding-left: 25px !important; 
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+// Table of Contents Header
+#quarto-margin-sidebar h2, 
+.sidebar h2, 
+#TOC .toc-title {
+  font-family: "Helvetica Neue", Helvetica, "Arial Black", sans-serif !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  font-size: 1.1rem !important;
+  color: #000000 !important;
+  border-bottom: 4px solid #000000 !important; 
+  padding-bottom: 8px !important;
+  margin-bottom: 25px !important;
+  margin-top: 0 !important; 
+  text-align: left !important;
+}
+
+// List Configuration
+#quarto-margin-sidebar nav ul, 
+.sidebar nav ul, 
+#TOC ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important; 
+}
+
+// List Items Isolation
+#quarto-margin-sidebar nav ul li, 
+.sidebar nav ul li, 
+#TOC ul li {
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+// Base Links - Clean Text Only (Editorial Gray)
+#quarto-margin-sidebar nav ul li a, 
+.sidebar nav ul li a, 
+#TOC ul li a {
+  display: block !important;
+  width: 100% !important;
+  font-family: "Helvetica Neue", Helvetica, "Arial Black", sans-serif !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  font-size: 0.8rem !important; 
+  letter-spacing: 0.05em !important;
+  line-height: 1.2 !important;
+  padding: 12px 14px !important; 
+  text-align: left !important; 
+  text-decoration: none !important;
+  
+  background-color: transparent !important;
+  color: #a0a0a0 !important; 
+  border: 3px solid transparent !important; 
+  box-shadow: none !important;
+  filter: none !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+// Shared Box Blueprint for both Hover and Active States
+#quarto-margin-sidebar nav ul li a:hover, 
+#quarto-margin-sidebar nav ul li a.active,
+#TOC ul li a:hover,
+#TOC ul li a.active {
+  color: #ffffff !important;
+  border: 3px solid #000000 !important; 
+  box-shadow: none !important; 
+  
+  // High-performance hardware accelerated flat shadow without distortion
+  filter: drop-shadow(5px 5px 0px #000000) !important;
+  
+  backface-visibility: hidden !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+// =========================================================================
+// SEQUENTIAL SYSTEM - 10 COLORS (RAINBOW FIRST, THEN PROGRESS)
+// =========================================================================
+
+// --- PART 1: THE TRADITIONAL RAINBOW ---
+
+// 1. Red (Rainbow)
+#quarto-margin-sidebar nav ul li:nth-child(10n+1) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+1) a.active,
+#TOC ul li:nth-child(10n+1) a:hover, #TOC ul li:nth-child(10n+1) a.active { 
+  background-color: #E40303 !important; transform: rotate(-1.2deg) !important; 
+} 
+
+// 2. Orange (Rainbow)
+#quarto-margin-sidebar nav ul li:nth-child(10n+2) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+2) a.active,
+#TOC ul li:nth-child(10n+2) a:hover, #TOC ul li:nth-child(10n+2) a.active { 
+  background-color: #FF8C00 !important; transform: rotate(1deg) !important; 
+} 
+
+// 3. Yellow (Rainbow) - Black text for readability
+#quarto-margin-sidebar nav ul li:nth-child(10n+3) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+3) a.active,
+#TOC ul li:nth-child(10n+3) a:hover, #TOC ul li:nth-child(10n+3) a.active { 
+  background-color: #FFED00 !important; color: #000000 !important; transform: rotate(-0.8deg) !important; 
+} 
+
+// 4. Green (Rainbow)
+#quarto-margin-sidebar nav ul li:nth-child(10n+4) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+4) a.active,
+#TOC ul li:nth-child(10n+4) a:hover, #TOC ul li:nth-child(10n+4) a.active { 
+  background-color: #008026 !important; transform: rotate(1.4deg) !important; 
+} 
+
+// 5. Blue (Rainbow)
+#quarto-margin-sidebar nav ul li:nth-child(10n+5) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+5) a.active,
+#TOC ul li:nth-child(10n+5) a:hover, #TOC ul li:nth-child(10n+5) a.active { 
+  background-color: #004CFF !important; transform: rotate(-1deg) !important; 
+} 
+
+// 6. Purple (Rainbow)
+#quarto-margin-sidebar nav ul li:nth-child(10n+6) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+6) a.active,
+#TOC ul li:nth-child(10n+6) a:hover, #TOC ul li:nth-child(10n+6) a.active { 
+  background-color: #732982 !important; transform: rotate(1.2deg) !important; 
+} 
+
+// --- PART 2: THE PROGRESS EXTENSIONS ---
+
+// 7. Light Blue (Trans) - Black text for readability
+#quarto-margin-sidebar nav ul li:nth-child(10n+7) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+7) a.active,
+#TOC ul li:nth-child(10n+7) a:hover, #TOC ul li:nth-child(10n+7) a.active { 
+  background-color: #55CDFC !important; color: #000000 !important; transform: rotate(-1.5deg) !important; 
+} 
+
+// 8. Light Pink (Trans) - Black text for readability
+#quarto-margin-sidebar nav ul li:nth-child(10n+8) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+8) a.active,
+#TOC ul li:nth-child(10n+8) a:hover, #TOC ul li:nth-child(10n+8) a.active { 
+  background-color: #F7A8B8 !important; color: #000000 !important; transform: rotate(0.8deg) !important; 
+} 
+
+// 9. Brown (BIPOC)
+#quarto-margin-sidebar nav ul li:nth-child(10n+9) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+9) a.active,
+#TOC ul li:nth-child(10n+9) a:hover, #TOC ul li:nth-child(10n+9) a.active { 
+  background-color: #613915 !important; transform: rotate(-1.1deg) !important; 
+} 
+
+// 10. Black (BIPOC)
+#quarto-margin-sidebar nav ul li:nth-child(10n+10) a:hover, #quarto-margin-sidebar nav ul li:nth-child(10n+10) a.active,
+#TOC ul li:nth-child(10n+10) a:hover, #TOC ul li:nth-child(10n+10) a.active { 
+  background-color: #000000 !important; transform: rotate(0.3deg) !important; 
+}
+
+// =========================================================================
+// UNIFIED BRUTALIST SHADOW SYSTEM (Tables, Outputs & Callout Boxes)
+// =========================================================================
+
+#quarto-document-content {
+  // Target tables, code outputs, callouts, and blockquotes to look 100% identical
+  .cell-output > pre,
+  .cell-output-display pre,
+  .dataframe,
+  table,
+  .callout,
+  blockquote,
+  .blockquote {
+    // Ensure the container doesn't chop off the outer shadow
+    overflow: visible !important; 
+    
+    // Forced identical thick brutalist frame and solid shadow structure everywhere
+    border: 3px solid #000000 !important;
+    box-shadow: 5px 5px 0px 0px #000000 !important; 
+    
+    // Structural layout adjustments
+    margin-right: 10px !important;
+    margin-bottom: 1.5rem !important;
+    background-color: #ffffff !important;
+  }
+
+  // Remove individual left-borders that Quarto default callouts often have
+  .callout, blockquote, .blockquote {
+    border-left: 3px solid #000000 !important; // Forces the left wall to match the 3px standard
+  }
+
+  // Remove borders and shadows from the outer wrapper divs entirely
+  .cell-output, 
+  .cell-output-display, 
+  .table-responsive {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  // Hide empty ghost containers that Quarto occasionally generates below outputs
+  .cell-output-display:empty,
+  div:empty {
+    display: none !important;
+  }
+}
