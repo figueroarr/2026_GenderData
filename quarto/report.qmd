@@ -19,7 +19,8 @@ execute:
 
 jupyter: python3
 ---
-<a href="#top" class="back-to-top">
+<a href="#" class="back-to-top"
+   onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
   <img src="assets/up-arrow.png" alt="Back to top">
 </a>
 
@@ -349,7 +350,7 @@ X and Y are lovers.</code></pre>
 
 </div>
 
-# Identity Detection
+# Identity Detection {#identity-detection}
 <div class="identity-card">
 
 After cleaning and preparing the dataset, the next step involved automatically identifying LGBTQ+ identities.
@@ -392,7 +393,7 @@ The detection process was implemented through predefined keyword patterns and re
 The automatic classification stage significantly reduced the amount of manual work required during the later phases of the project.
 </div>
 
-# Relationship Inference
+# Relationship Inference {#relationship-inference}
 <div class="relationship-card">
 
 Not all LGBTQ+ identities were explicitly stated in the character descriptions.
@@ -429,7 +430,7 @@ The relationship inference process was particularly useful for descriptions that
 
 </div>
 
-# Manual Review
+# Manual Review {#manual-review}
 <div class="manual-review-card">
 
 Despite the automated classification process, some character descriptions remained ambiguous or lacked sufficient information for reliable labeling.
@@ -539,7 +540,7 @@ for col in df.columns:
 ```
 </div>
 
-# Distribution of LGBTQ+ Identities
+# Distribution of LGBTQ+ Identities {#distribution-of-lgbtq-identities}
 
 <div class="distribution-card">
 
@@ -584,7 +585,7 @@ counts_df
 ```
 </div>
 
-# Treemap / Overview
+# Treemap / Overview {#treemap-overview}
 
 <div class="viz-card">
 
@@ -592,7 +593,7 @@ counts_df
 
 </div>
 
-# LGBTQ+ Representation Over Time
+# LGBTQ+ Representation Over Time {#lgbtq-representation-over-time}
 
 <div class="viz-card">
 
@@ -600,7 +601,7 @@ counts_df
 
 </div>
 
-# Development Across Years
+# Development Across Years {#development-across-years}
 
 <div class="viz-card">
 
@@ -660,7 +661,7 @@ Overall, the findings indicate growing LGBTQ+ visibility in television while als
 
 </div>
 
-# Interpretation of Results
+# Interpretation of Results {#interpretation-of-results}
 
 <div class="interpretation-card">
 
@@ -713,7 +714,7 @@ Overall, the analysis suggests that LGBTQ+ visibility in television has increase
 
 </div>
 
-# Methodological Reflection
+# Methodological Reflection {#methodological-reflection}
 
 <div class="reflection-card">
 
@@ -766,7 +767,7 @@ provide limited contextual information and may require manual interpretation.
 
 </div>
 
-# Limitations
+# Limitations {#limitations}
 
 <div class="limitations-grid">
 
@@ -816,7 +817,7 @@ provide insufficient information for reliable automatic classification and often
 
 </div>
 
-# Conclusion
+# Conclusion {#conclusion}
 
 <div class="conclusion-card">
 
@@ -864,7 +865,7 @@ Overall, the project demonstrates how computational approaches can be applied to
 </div>
 
 
-# Reproducibility
+# Reproducibility {#reproducibility}
 <div class="reproducibility-card">
 
 One of the main objectives of this project was to ensure that the entire workflow could be reproduced by other researchers.
@@ -908,7 +909,7 @@ By combining Python scripts, structured datasets, version control through GitHub
 
 </div>
 
-# References
+# References {#references}
 
 <div class="references-card">
 
@@ -965,3 +966,5 @@ Python Programming Language ↗
 </p>
 
 </div>
+
+<script src="scrollspy.js"></script>

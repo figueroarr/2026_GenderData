@@ -97,18 +97,37 @@ main,
    ========================================================================== */
 
 .section-nav {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 1000;
+
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+
+  width: calc(100% - 60px);
+  max-width: 1600px;
+
   gap: 1rem;
-  padding: 1.5rem 3rem;
-  border-bottom: 2px solid #000;
-  margin-bottom: 3rem;
-  background: $body-bg;
+  padding: 1rem 2rem;
+
+  background: rgba(246, 242, 235, 0.95);
+  backdrop-filter: blur(8px);
+
+  border: 2px solid #000;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0 #000;
+
   box-sizing: border-box;
+}
+
+body {
+  padding-top: 120px;
 }
 
 .section-nav > * {
@@ -135,6 +154,40 @@ main,
   font-size: 0.9rem;
   line-height: 1.2;
   transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.section-nav a.active {
+  transform: translateY(-2px);
+}
+
+.section-nav a[href="#introduction"].active {
+  background: #E40303 !important;
+  color: white !important;
+}
+
+.section-nav a[href="#research-question"].active {
+  background: #FF8C00 !important;
+  color: white !important;
+}
+
+.section-nav a[href="#pipeline-overview"].active {
+  background: #FFED00 !important;
+  color: black !important;
+}
+
+.section-nav a[href="#dataset-overview"].active {
+  background: #008026 !important;
+  color: white !important;
+}
+
+.section-nav a[href="#key-findings"].active {
+  background: #004CFF !important;
+  color: white !important;
+}
+
+.section-nav a[href="#conclusion"].active {
+  background: #732982 !important;
+  color: white !important;
 }
 
 .section-nav a:hover {
